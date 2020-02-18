@@ -1,0 +1,25 @@
+{
+  "name": "SendMunk",
+  "version": "1.0.0",
+  "description": "Top email management tool for online enterpreneurs",
+  "main": "Gruntfile.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ThemeMakker",
+  "license": "ISC",
+  "dependencies": {
+    "grunt": "^1.0.2"
+  },
+  "devDependencies": {
+    "bootstrap": "^3.4.1",
+    "bootstrap-select": "^1.13.10",
+    "bootstrap-select-country": "^4.0.0",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-sass": "^2.1.0",
+    "jquery": "^3.4.1"
+  }
+}
