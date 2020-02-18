@@ -1,0 +1,456 @@
+STEPS
+<div class="popover workflow-steps fade bottom in" role="tooltip" id="popover208424" style="top: 209px; left: 172.5px; display: block;">
+    <div class="arrow" style="left: 50%;"></div>
+    <div class="popover-content">
+        <div class="steps-popup ng-scope">
+            <h3 class="ng-binding">Add a next step to your workflow</h3>
+            <ul>
+                <li ng-click="
+                        addStep('EMAIL', data, 'next');
+                        window.automation_step_update_count || closeAllPopovers();
+                    " ng-class="{
+                        'disabled': window.automation_step_update_count,
+                        'cursor-wait': window.automation_step_update_count
+                    }" class="">
+                    <svg class="icon icon-mail">
+                        <use xlink:href="/assets/images/svg/workflow.svg#icon-mail"></use>
+                    </svg>
+                    <div class="ng-binding">Email</div>
+                </li>
+                <li ng-click="
+                        addStep('DELAY', data, 'next');
+                        window.automation_step_update_count || closeAllPopovers();
+                    " ng-class="{
+                        'disabled': window.automation_step_update_count,
+                        'cursor-wait': window.automation_step_update_count
+                    }" class="">
+                    <svg class="icon icon-delay">
+                        <use xlink:href="/assets/images/svg/workflow.svg#icon-delay"></use>
+                    </svg>
+                    <div class="ng-binding">Delay</div>
+                </li>
+                <li ng-click="
+                        addStep('CONDITION', data, 'next');
+                        window.automation_step_update_count || closeAllPopovers();
+                    " ng-class="{
+                        'disabled': window.automation_step_update_count,
+                        'cursor-wait': window.automation_step_update_count
+                    }" class="">
+                    <svg class="icon icon-conclusion">
+                        <use xlink:href="/assets/images/svg/workflow.svg#icon-conclusion"></use>
+                    </svg>
+                    <div class="ng-binding">Condition</div>
+                </li>
+                <li ng-click="
+                        addStep('ACTION', data, 'next');
+                        window.automation_step_update_count || closeAllPopovers();
+                    " ng-class="{
+                        'disabled': window.automation_step_update_count,
+                        'cursor-wait': window.automation_step_update_count
+                    }" class="">
+                    <svg class="icon icon-cog">
+                        <use xlink:href="/assets/images/svg/workflow.svg#icon-cog"></use>
+                    </svg>
+                    <div class="ng-binding">Action</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+EMAIL
+<div class="ng-scope ng-isolate-scope">
+    <ul class="wf-steps-subtree ng-scope">
+        <li>
+            <div class="step-container step-incomplete" >
+                <div class="step-content email step-selected">
+                    <div class="ng-hide">
+                      <div class="sk-spinner sk-spinner-three-bounce">
+                        <div class="sk-bounce1"></div>
+                        <div class="sk-bounce2"></div>
+                        <div class="sk-bounce3"></div>
+                      </div>
+                    </div>
+                    <a class="remove-step" href="javascript:;">
+                      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </a>
+                    <div class="step-details">
+                        <div class="email-screenshot">
+                            <img class="ng-isolate-scope" src="/img/workflow_screenshot.png">
+                        </div>
+
+                        <div class="define-content ng-binding ng-scope">
+                            Define email content
+                        </div>
+                    </div>
+                </div>
+                <div class="add-step">
+                    <a href="javascript:;" type="button" class="btn btn-add ng-hide">
+                      <svg class="icon icon-action">
+                        <use xlink:href="img/workflow.svg#icon-action"></use>
+                      </svg>
+                    </a>
+
+                    <a href="javascript:;" type="button" class="btn btn-add">
+                      <svg class="icon icon-action">
+                        <use xlink:href="/img/workflow.svg#icon-action"></use>
+                      </svg>
+                    </a>
+                </div>
+                <div class="ng-scope"></div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+DELAY
+<div class="ng-scope ng-isolate-scope">
+    <ul class="wf-steps-subtree ng-scope">
+        <li>
+            <div class="step-container step-incomplete">
+                <div class="step-content delay step-selected">
+                    <a class="remove-step" href="javascript:;">
+                      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </a>
+
+                    <div class="set-delay ng-binding ng-scope">
+                        Set delay
+                    </div>
+                </div>
+
+                <div class="add-step">
+                    <a href="javascript:;" type="button" class="btn btn-add ng-hide">
+                      <svg class="icon icon-action">
+                        <use xlink:href="img/workflow.svg#icon-action"></use>
+                      </svg>
+                    </a>
+
+                    <a href="javascript:;" type="button" class="btn btn-add">
+                      <svg class="icon icon-action">
+                        <use xlink:href="img/workflow.svg#icon-action"></use>
+                      </svg>
+                    </a>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+
+CONDITION
+<div class="ng-scope ng-isolate-scope">
+    <ul class="wf-steps-subtree decision ng-scope">
+        <li>
+            <div class="step-container step-incomplete">
+                <div class="step-content condition step-selected">
+                    <a class="remove-step" href="javascript:;">
+                      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </a>
+
+                    <div class="diamond"></div>
+                    <svg class="icon">
+                      <use xlink:href="img/workflow.svg#icon-conclusion"></use>
+                    </svg>
+
+                    <div class="define-content mb0 mt0 ng-binding ng-scope">Define condition</div>
+                </div>
+
+                <div class="ng-scope"></div>
+
+                <ul class="wf-steps-subtree condition">
+                    <li class="decision-steps">
+                        <div class="condition-rule yes">
+                            <svg class="icon icon-action">
+                              <use xlink:href="img/workflow.svg#icon-thumbs-up"></use>
+                            </svg>
+                        </div>
+                        <ul class="wf-steps-subtree">
+                            <li>
+                                <div class="step-container">
+                                    <div class="add-step only-condition">
+                                        <a href="javascript:;" type="button" class="btn btn-add ng-hide">
+                                            <svg class="icon icon-action">
+                                              <use xlink:href="img/workflow.svg#icon-action"></use>
+                                            </svg>
+                                        </a>
+
+                                        <a href="javascript:;" type="button" class="btn btn-add">
+                                            <svg class="icon icon-action">
+                                              <use xlink:href="img/workflow.svg#icon-action"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="decision-steps">
+                        <div class="condition-rule no">
+                            <svg class="icon icon-action">
+                              <use xlink:href="img/workflow.svg#icon-thumbs-down"></use>
+                            </svg>
+                        </div>
+                        <ul class="wf-steps-subtree">
+                            <li>
+                              <div class="step-container">
+                                <div class="add-step only-condition">
+                                  <a href="javascript:;" type="button" class="btn btn-add ng-hide">
+                                    <svg class="icon icon-action">
+                                      <use xlink:href="img/workflow.svg#icon-action"></use>
+                                    </svg>
+                                  </a>
+
+                                  <a href="javascript:;" type="button" class="btn btn-add">
+                                    <svg class="icon icon-action">
+                                      <use xlink:href="img/workflow.svg#icon-action"></use>
+                                    </svg>
+                                  </a>
+                                </div>
+                              </div>
+                            </li>
+                        </ul>
+                    </li>
+               </ul>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+ACTION
+<div class="ng-scope ng-isolate-scope">
+    <ul class="wf-steps-subtree ng-scope">
+        <li>
+            <div class="step-container step-incomplete">
+                <div class="step-content action step-selected">
+                    <a class="remove-step" href="javascript:;">
+                      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </a>
+
+                    <div class="step-details">
+                        <svg class="icon mb15 mt15">
+                            <use xlink:href="img/workflow.svg#icon-cog"></use>
+                        </svg>
+                        <div class="define-content mt0 ng-binding ng-scope">Define action</div>
+                    </div>
+                </div>
+
+              
+                <div class="add-step ng-scope">
+                    <a href="javascript:;" type="button" class="btn btn-add ng-hide">
+                      <svg class="icon icon-action">
+                        <use xlink:href="img/workflow.svg#icon-action"></use>
+                      </svg>
+                    </a>
+
+                    <a href="javascript:;" type="button" class="btn btn-add">
+                      <svg class="icon icon-action">
+                        <use xlink:href="img/workflow.svg#icon-action"></use>
+                      </svg>
+                    </a>
+                </div>
+
+                <div class="ng-scope"></div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+var jqueryMailPlugin = {
+    dt: Date.now(),
+    showEmailStep: function(selector){
+        $(selector).append('<div class="ng-scope ng-isolate-scope second-child-step">'+
+                                '<ul class="wf-steps-subtree ng-scope">'+
+                                    '<li>'+
+                                        '<div class="step-container step-incomplete" id="step-container'+this.dt+'">'+
+                                            '<div class="step-content email step-selected" id="step-id-4750506">'+
+                                                '<div class="ng-hide">'+
+                                                  '<div class="sk-spinner sk-spinner-three-bounce">'+
+                                                    '<div class="sk-bounce1"></div>'+
+                                                    '<div class="sk-bounce2"></div>'+
+                                                    '<div class="sk-bounce3"></div>'+
+                                                  '</div>'+
+                                                '</div>'+
+                                                '<a class="remove-step" href="javascript:;">'+
+                                                  '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>'+
+                                                '</a>'+
+                                                '<div class="step-details">'+
+                                                    '<div class="email-screenshot">'+
+                                                        '<img step_id="4750506" class="ng-isolate-scope" src="img/workflow_screenshot.png">'+
+                                                    '</div>'+
+
+                                                    '<div class="define-content ng-binding ng-scope">Define email content</div>'+
+                                                '</div>'+
+                                            '</div>'+
+                                            '<div class="add-step add-step'+this.dt+'">'+
+                                                '<a href="javascript:;" type="button" class="btn btn-add ng-hide">'+
+                                                  '<svg class="icon icon-action">'+
+                                                    '<use xlink:href="img/workflow.svg#icon-action"></use>'+
+                                                  '</svg>'+
+                                                '</a>'+
+
+                                                '<a href="javascript:;" type="button" class="btn btn-add show-steps" onclick="showSteps(this);" id="addstep'+this.dt+'">'+
+                                                  '<svg class="icon icon-action show-steps">'+
+                                                    '<use xlink:href="img/workflow.svg#icon-action"></use>'+
+                                                  '</svg>'+
+                                                '</a>'+
+                                            '</div>'+
+                                        '</div>'+
+                                    '</li>'+
+                                '</ul>'+
+                            '</div>');
+
+        $(".workflow-steps").remove();
+        $(".first-step-explanation").remove();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+<div class="hide">
+    <div id="step_popover">
+    <div class="steps-popup">
+        <h3 class="ng-binding">Add a next step to your workflow</h3>
+        <ul>
+            <li ng-click="
+                    addStep('EMAIL', data, 'PARENT_NEXT');
+                    window.automation_step_update_count || closeAllPopovers();
+                " ng-class="{
+                    'disabled': window.automation_step_update_count,
+                    'cursor-wait': window.automation_step_update_count
+                }">
+                <svg class="icon icon-mail">
+                    <use xlink:href="/assets/images/svg/workflow.svg#icon-mail"></use>
+                </svg>
+                <div class="ng-binding">Email</div>
+            </li>
+            <li ng-click="
+                    addStep('DELAY', data, 'PARENT_NEXT');
+                    window.automation_step_update_count || closeAllPopovers();
+                " ng-class="{
+                    'disabled': window.automation_step_update_count,
+                    'cursor-wait': window.automation_step_update_count
+                }">
+                <svg class="icon icon-delay">
+                    <use xlink:href="/assets/images/svg/workflow.svg#icon-delay"></use>
+                </svg>
+                <div class="ng-binding">Delay</div>
+            </li>
+            <li ng-click="
+                    addStep('CONDITION', data, 'PARENT_NEXT');
+                    window.automation_step_update_count || closeAllPopovers();
+                " ng-class="{
+                    'disabled': window.automation_step_update_count,
+                    'cursor-wait': window.automation_step_update_count
+                }">
+                <svg class="icon icon-conclusion">
+                    <use xlink:href="/assets/images/svg/workflow.svg#icon-conclusion"></use>
+                </svg>
+                <div class="ng-binding">Condition</div>
+            </li>
+            <li ng-click="
+                    addStep('ACTION', data, 'PARENT_NEXT');
+                    window.automation_step_update_count || closeAllPopovers();
+                " ng-class="{
+                    'disabled': window.automation_step_update_count,
+                    'cursor-wait': window.automation_step_update_count
+                }">
+                <svg class="icon icon-cog">
+                    <use xlink:href="/assets/images/svg/workflow.svg#icon-cog"></use>
+                </svg>
+                <div class="ng-binding">Action</div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div id="incomplete_popover">
+    <div class="incomplete-steps-popover">
+        <h3 class="ng-binding">Workflow can't be started</h3>
+        <!-- ngIf: incompleteSteps.length == 1 && incompleteSteps[0].type == 'NO_EMAIL_OR_ACTION' --><ul ng-if="incompleteSteps.length == 1 &amp;&amp; incompleteSteps[0].type == 'NO_EMAIL_OR_ACTION'" class="ng-scope">
+            <li>
+                <span class="ng-binding">Workflow is missing EMAIL or ACTION step</span>
+            </li>
+        </ul><!-- end ngIf: incompleteSteps.length == 1 && incompleteSteps[0].type == 'NO_EMAIL_OR_ACTION' -->
+
+        <!-- ngIf: incompleteSteps.length != 1 || incompleteSteps[0].type != 'NO_EMAIL_OR_ACTION' -->
+    </div>
+</div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="ng-scope">
+    <div class="condition-box ng-scope">
+        <h4 class="ng-binding">Condition</h4>
+        <a href="javascript:;" class="delete-condition ng-scope" ><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+        <div class="dropdown">
+            <button class="btn validate-check-attribute-value ng-binding" type="button" data-toggle="dropdown" data-check-value="">Select<span class="caret"></span></button>
+            <style>.validate-check-attribute-value.has-error {border-color: red !important;}</style>
+            <ul class="dropdown-menu">
+                <li class="ng-scope"><a href="#" class="ng-binding">Campaign activity</a></li>
+                <li class="ng-scope"><a href="#" class="ng-binding">Workflow activity</a></li>
+                <li class="ng-scope"><a href="#" class="ng-binding">Custom fields</a></li>
+                <li class="ng-scope"><a href="#" class="ng-binding">Group membership</a></li>
+                <li class="ng-scope"><a href="#" class="ng-binding">Segment membership</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+

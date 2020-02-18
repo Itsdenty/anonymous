@@ -1,0 +1,40 @@
+element.popover({
+        html:true,
+        trigger:"manual",
+        placement:"auto",
+        container:".ml-workflow-builder-area",
+        viewport:{selector:".ml-workflow-builder-area",padding:30},
+        template:'<div class="popover workflow-steps" role="tooltip"><div class="arrow"></div><div class="popover-content"></div></div>',
+        content:function(){
+            content = '<div class="steps-popup ng-scope">'+
+                                '<h3 class="ng-binding">Add a next step to your workflow</h3>'+
+                                '<ul>'+
+                                    '<li class="step-mail" onclick="showEmailStep();">'+
+                                        '<svg class="icon icon-mail">'+
+                                            '<use xlink:href="img/workflow.svg#icon-mail"></use>'+
+                                        '</svg>'+
+                                        '<div class="ng-binding">Email</div>'+
+                                    '</li>'+
+                                    '<li class="step-delay">'+
+                                        '<svg class="icon icon-delay">'+
+                                            '<use xlink:href="img/workflow.svg#icon-delay"></use>'+
+                                        '</svg>'+
+                                        '<div class="ng-binding">Delay</div>'+
+                                    '</li>'+
+                                    '<li class="step-condition">'+
+                                        '<svg class="icon icon-conclusion">'+
+                                            '<use xlink:href="img/workflow.svg#icon-conclusion"></use>'+
+                                        '</svg>'+
+                                        '<div class="ng-binding">Condition</div>'+
+                                    '</li>'+
+                                    '<li class="step-action">'+
+                                        '<svg class="icon icon-cog">'+
+                                            '<use xlink:href="img/workflow.svg#icon-cog"></use>'+
+                                        '</svg>'+
+                                        '<div class="ng-binding">Action</div>'+
+                                    '</li>'+
+                                '</ul>'+
+                            '</div>'+
+            return content;
+        }
+    });
