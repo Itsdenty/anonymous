@@ -187,8 +187,11 @@
                         <generate-automation-step-description step="data" class="ng-isolate-scope">
                           <ng-include src="&#39;/assetsjs/core/views/generate-automation-step-description/trigger.html&#39;" class="ng-scope">
                             <span class="ng-scope">
-                              <span class="  ng-scope">When a contact is added
-                              </span>
+                            @if($automation->trigger_type=='contact')
+                              <span class="  ng-scope">when contact is added</span>
+                              @else
+                              <span class="  ng-scope">when tag is added</span>
+                            @endIf
                             </span>
                           </ng-include>
                           <ng-include src="&#39;/assetsjs/core/views/generate-automation-step-description/email.html&#39;" class="ng-scope"></ng-include>
@@ -262,11 +265,11 @@
               <div class="ng-scope">
                 <div class="form-group workflow-report separator">
                   <div class="col-xs-12">
-                    <h4 class=" ">Workflow Name</h4>
+                    <h4 class=" ">{{$automation->name}}</h4>
                   </div>
 
                   <div class="col-xs-12">
-                    <h4 class=" ">Date created</h4>
+                    <h4 class=" ">{{$automation->com_create_guid}}</h4>
                   </div>
                   <div class="row mb30">
                     <div class="col-xs-4" style="margin-top:10%;">
@@ -317,5 +320,37 @@
 <input type="hidden" name="step_postion">
 
 <script type="text/javascript" src='{{ url("js/jqueryMailPlugin.js") }}'></script>
+<script>
+         jQuery(document).ready(function(){
+            jQuery('div.save-btn').click(function(e){
+               e.preventDefault();
+               $.ajaxSetup({
+                  headers: {
+                      'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                  }
+              });
+               jQuery.ajax({
+                  url: "{{ route('workflow') }}",
+                  method: 'post',
+                  data: {
 
-</body></html>
+                          action: jQuery('div.sidebar-content-top h3:visible').html(),
+                          addTag: jQuery('div[style] select[class=custom-select]:visible').val(),
+                          removeTag: jQuery('div[ng-if=!groupsLoading] select:visible').val(),
+                          emailSubject: jQuery('div.emoji-container div[class=ng-valid]:visible').text(),
+                          senderName: jQuery('div.open button:visible').text(),
+                          senderEmail: jQuery('div.dropdown button:visible').text(),
+                          wait: jQuery('div.display-flex input[type=text]:visible').val(),
+                          time: jQuery('div.number-width select:visible').val(),
+                          smsContent: jQuery('textarea[placeholder=Type SMS here]').val(),
+                          smsServer: jQuery('div[ng-if=!groupsLoading] button').text()
+                  },
+                  success: function(result){
+                     jQuery('.alert').show();
+                     jQuery('.alert').html(result.success);
+                  }});
+               });
+            });
+            </script>
+</body>
+</html>
